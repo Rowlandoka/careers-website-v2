@@ -22,36 +22,56 @@
         height: 360px;
         object-fit: cover;
         width: 100%;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'navbar.html' %}
+    <img
+      class="img-fluid"
+      id="banner"
+      src="../static/careers.jpg"
+      alt=""
+    />
     <div class="container">
       <h1 class="text-center mt-2 mb-4">{{company_name}}</h1>
-      <img
-        class="img-fluid"
-        id="banner"
-        src="../static/banner_image.jpg"
-        alt=""
-      />
-      <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2>
-      <p class="lead">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit autem
-        dolorum ipsum non perspiciatis quia repellendus facere odio nulla cum
-        qui sed at earum eaque laboriosam accusantium porro adipisci, error
-        magni quibusdam nostrum, voluptas rerum impedit? Fugiat sit doloribus
-        vero iste placeat natus eius non, esse reiciendis amet voluptate sequi
-        rerum illo, quae quaerat reprehenderit, quidem adipisci omnis iure
-        minus!
-      </p>
+      <!-- <h2 class="text-center mt-2 mb-4">About {{company_name}}</h2> -->
+      <div
+        class="row"
+        style="margin-bottom: 16px"
+      >
+        <div class="col-md-6">
+          <p class="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit autem
+            dolorum ipsum non perspiciatis quia repellendus facere odio nulla
+            cum qui sed at earum eaque laboriosam accusantium porro adipisci,
+            error magni quibusdam nostrum, voluptas rerum impedit? Fugiat sit
+            doloribus vero iste placeat natus eius non, esse reiciendis amet
+            voluptate sequi rerum illo, quae quaerat reprehenderit, quidem
+            adipisci omnis iure minus!
+          </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img
+            src="../static/people.jpg"
+            alt=""
+            style="height: 320px; border-radius: 4px"
+          />
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Job Openings</h2>
       <div>
         {% for job in jobs %} {% include 'jobitems.html' %} {% endfor %}
       </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact us</button>
-        <p class="mt-4">Copyright 2023, CareerLinkUp</p>
+        <a
+          href="mailto:hello@careerlinkup.com?subject=Questions%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0AMy%20question%3A%20%3Center%20question%20here%3E"
+          class="btn btn-primary btn-lg"
+          >Contact us</a
+        >
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
